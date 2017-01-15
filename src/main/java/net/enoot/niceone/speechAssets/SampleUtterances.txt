@@ -1,0 +1,13 @@
+GetNiceOneJoke a nice one
+GetNiceOneJoke tell me a joke
+GetNiceOneJoke tell me a nice joke
+GetNiceOneJoke give me a joke
+GetNiceOneJoke give me a nice joke
+GetNiceOneJoke tell me joke
+GetNiceOneJoke tell me a nice joke
+GetNiceOneJoke give me joke
+GetNiceOneJoke give me a nice joke
+GetNiceOneJoke give me some jokes
+GetNiceOneJoke give me some nice jokes
+GetNiceOneJoke tell me something
+GetNiceOneJoke give me something
