@@ -4,8 +4,19 @@ apply plugin: 'idea'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
 
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.14'
@@ -16,4 +27,6 @@ dependencies {
 
 
 }
+
+
 

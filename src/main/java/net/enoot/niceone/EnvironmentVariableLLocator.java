@@ -12,13 +12,15 @@ class EnvironmentVariableLLocator {
             return environmentVariables.get(environmentVariableKey);
         }
 
-        throw new environmentVariableLocatorException("unable to locate environmentVariable for" + environmentVariableKey);
+        throw new EnvironmentVariableLocatorException("unable to locate environmentVariable for" + environmentVariableKey);
     }
 
 
-    public static class environmentVariableLocatorException extends RuntimeException {
-        environmentVariableLocatorException(String message) {
+    public static class EnvironmentVariableLocatorException extends RuntimeException {
+
+        EnvironmentVariableLocatorException(String message) {
             super(message);
         }
+
     }
 }
