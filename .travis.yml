@@ -3,14 +3,19 @@ jdk:
 - oraclejdk8
 before_deploy:
 - "./gradlew shadowJar"
+- "ls ${TRAVIS_BUILD_DIR}"
 deploy:
   skip_cleanup: true
   provider: lambda
   function_name: niceOne
   role: arn:aws:iam::606926053612:role/lambda_basic_execution
-  handler_name: net.enoot.niceone.NiceOneSpeechletRequestStreamHandler
+  handler_name: "net.enoot.niceone.NiceOneSpeechletRequestStreamHandler"
   access_key_id: AKIAJEUG6VPIXUHID5SA
   on:
     repo: conklin/niceOne
   secret_access_key:
     secure: QchbOium6rFIfoXY4Gl8i6Jy3Owedk9q0i9WCAMraUgvS0jriJdgRCxbpdy0+oCgoW+kjThjfutFoHQGxC8pFPyAxhK+x7kZ9S+YEuy1hAB2+J+B2ELp5tkqrhh+ysg/k33uCNwWgbooi3W29/2YRmcjpQWrVTuXNM3nID4mbJg5qtJqHKZtvDoNXuH+E9SP3wpFTgzS8mL2ToWxBq7fWzvZXJwCirrcMl63hb3pB1VDBT71WX6qMU2+Hu3yU5YTkPn6+sg8jYefXs/xTJSpHTWZxvdx/trA7cdDfzrXyuTNzHJGSHkwqqgOEO5XBZpsCPmS6zPv399sJtHVgUMzZ52ZR6vBbmOXoU2s61VCam0V5O52ANq1nF4HeX2ELS2ZpV5slv1vsHaJlJZB5GeNNeYOMDToIDSRLqcF/FRh7Yuyk0WESZcYAHzGUe1N8iakDzUO9L/jczui5XMwKrSA937IwAMKrWk4gegjK4GsnB2iNW2KSQuYzSnPvLc96Q2EvFtuLqsc6sp7JwCg+1HCfRdmQtQwjJIDv7n5ijXJj640oUiuNOz8De8NWpvXRCyx7kkUsSylmuYMJtgoTNWbqb4tPE615IinL7a3jAQ5UQqMi0Q1FQt8dMGEhMW3s66Q1Ek6Ds1coVv0CTifauNEHV7JhODVVN0RaKWsFhPPQGA=
+  runtime: java8
+  zip: ${TRAVIS_BUILD_DIR}/libs
+
+
