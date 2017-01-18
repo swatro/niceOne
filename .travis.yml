@@ -3,12 +3,13 @@ jdk:
 - oraclejdk8
 before_deploy:
 - "./gradlew shadowJar"
+  skip_cleanup: true
 deploy:
   skip_cleanup: true
   provider: lambda
   function_name: niceOne
   role: arn:aws:iam::606926053612:role/lambda_basic_execution
-  handler_name: net.enoot.niceone.NiceOneSpeechletRequestStreamHandler
+  handler_name: 'net.enoot.niceone.NiceOneSpeechletRequestStreamHandler'
   access_key_id: AKIAJEUG6VPIXUHID5SA
   on:
     repo: conklin/niceOne
