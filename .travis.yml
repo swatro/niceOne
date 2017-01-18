@@ -3,7 +3,6 @@ jdk:
 - oraclejdk8
 before_deploy:
 - "./gradlew shadowJar"
-  skip_cleanup: true
 deploy:
   skip_cleanup: true
   provider: lambda
